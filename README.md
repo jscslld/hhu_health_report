@@ -45,4 +45,4 @@ PASSWORD='信息门户密码'
 
 ### Github Actions部署（强烈不推荐）
 
-该部署方式违法Github Actions的TOS，故不做详细介绍
+该部署方式违反Github Actions的TOS，故不做详细介绍
