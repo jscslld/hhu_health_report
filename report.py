@@ -50,7 +50,6 @@ def report():
     """
     syncUrl="http://form.hhu.edu.cn/pdc/formDesignApi/S/gUTwwojq"
     res = requests.get(url=syncUrl, cookies=cookie)
-    print(res.url)
     javascript = re.search('<script type="text\/javascript">([\w\W]*)<\/script>', res.text)[0]
     wid = re.search("(?<=_selfFormWid = \')(.*?)(?=\')", javascript)[0]
     uid = re.search("(?<=_userId = \')(.*?)(?=\')", javascript)[0]
