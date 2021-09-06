@@ -7,6 +7,13 @@
 python 3.6+
 
 ## 更新日志
+[2021/09/06] 1.2
+
+由于form.hhu.edu.cn外网访问不稳定，故新增dailyreport.hhu.edu.cn打卡接口。
+
+目前逻辑如下：
+
+优先使用dailyreport.hhu.edu.cn打卡，若dailyreport.hhu.edu.cn需要验证码登录，则使用form.hhu.edu.cn打卡
 
 [2021/09/03] 1.1
 
