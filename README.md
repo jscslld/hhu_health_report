@@ -67,7 +67,7 @@ PASSWORD='信息门户密码'
 5.在函数管理 - 函数代码中，点击编辑器菜单栏的终端 - 新终端，在弹出的命令行中依次输入
 ```
 cd src
-pip install requests_html -t .
+pip3 install requests_html -t .
 ```
 安装依赖完成后，点击部署，将其部署在云中。
 
