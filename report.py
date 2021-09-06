@@ -14,6 +14,9 @@ from cryptography.hazmat.primitives import padding
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.backends import default_backend
 import base64
+import os
+os.environ['TZ'] = 'Asia/Shanghai'
+
 
 """
 用户信息
