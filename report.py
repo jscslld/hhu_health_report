@@ -19,8 +19,8 @@ import base64
 用户信息
 """
 
-USERNAME = '1861010110'  # 学号
-PASSWORD = '283654'  # 密码
+USERNAME = '******'  # 学号
+PASSWORD = '******'  # 密码
 
 class AESCrypto(object):
     """AESCrypto."""
