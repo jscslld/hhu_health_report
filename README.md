@@ -7,6 +7,16 @@
 python 3.6+
 
 ## 更新日志
+[2021/09/07] 1.3
+
+由于新接口dailyreport.hhu.edu.cn不支持弱密码，故新增弱密码检测，若密码为纯数字，默认使用老接口进行打卡。
+
+修复老接口form.hhu.edu.cn在部分环境下出现Cookie丢失的Bug。
+
+将Crypto包修改为cryptography，便于安装。
+
+将时区固定为GMT +8，避免部分环境下因日期获取错误导致的打卡失败。
+
 [2021/09/06] 1.2
 
 由于form.hhu.edu.cn外网访问不稳定，故新增dailyreport.hhu.edu.cn打卡接口。
@@ -34,6 +44,7 @@ python 3.6+
 USERNAME='信息门户用户名'
 PASSWORD='信息门户密码'
 ```
+2.运行`pip install -r requirements.txt`安装依赖
 
 2.使用crontab添加定时任务，定时调用`python report.py`即可
 
@@ -52,6 +63,13 @@ PASSWORD='信息门户密码'
 3.在函数管理 - 函数配置中，修改函数执行超时时间为300秒。（学校服务器有时会抽风）
 
 4.在触发管理中，创建触发器。触发周期选择自定义触发，填入crontab表达式即可。
+
+5.在函数管理 - 函数代码中，点击编辑器菜单栏的终端 - 新终端，在弹出的命令行中依次输入
+```
+cd src
+pip install requests_html -t .
+```
+安装依赖完成后，点击部署，将其部署在云中。
 
 常用crontab表达式
 
