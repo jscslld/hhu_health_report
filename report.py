@@ -44,6 +44,7 @@ def main():
     # 获取登录页面信息
     '''
     try_times = 0
+    password = password.upper()
     while True:
         try_times += 1
         if try_times > 3:
@@ -124,7 +125,7 @@ def main():
     # 获取打卡结果
     '''
     result = jkdk.html.xpath('//*[@id="cw"]')[0].attrs["value"]
-    if "成功" in result:
+    if ("成功" in result) or ("已存在" in result):
         logging.info("打卡成功")
         for key, value in log_template.items():
             logging.info(value + ":" + jkdk.html.xpath('//*[@id="' + key + '"]')[0].attrs["value"])
