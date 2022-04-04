@@ -17,5 +17,5 @@ jobs:
           python-version: '3.8'
           architecture: 'x64'
       - run: |
-        pip install -r requirements.txt
-        python3 report.py
+          pip install -r requirements.txt
+          python3 report.py
