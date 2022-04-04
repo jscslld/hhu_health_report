@@ -79,7 +79,7 @@ def main():
         '''
         # OCR识别验证码
         '''
-        reader = easyocr.Reader(['en'], gpu=False, verbose=False)
+        reader = easyocr.Reader(['en'], gpu=False, verbose=False,model_storage_directory="./model")
         result = reader.readtext('vcode.png')
         data["vcode"] = result[0][1].replace(' ', '')
         logging.info("处理完成，验证码识别结果为：" + data["vcode"])
