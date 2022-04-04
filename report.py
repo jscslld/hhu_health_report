@@ -11,12 +11,12 @@ import os
 os.environ['TZ'] = 'Asia/Shanghai'
 
 def main():
-    """
-    # 请在此处配置奥蓝系统用户名和密码
-    """
-    username = "奥蓝系统用户名"
-    password = "奥蓝系统密码"
-
+    username = os.environ.get("username")
+    if username == None:
+        raise Exception("未在Github Environments中配置用户名")
+    password = os.environ.get("password")
+    if username == None:
+        raise Exception("未在Github Environments中配置密码")
     '''
     # 配置日志输出和表单模板，初始化请求会话
     '''
