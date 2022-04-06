@@ -114,7 +114,7 @@ def main():
     '''
     add_form['__EVENTTARGET'] = 'dcbc'  # 修改为databc
     #add_form['__EVENTTARGET'] = 'databc'
-    add_form['tbrq'] = datetime.now().strftime('%Y-%#m-%#d')
+    add_form['tbrq'] = datetime.datetime.now(pytz.timezone('PRC')).strftime('%Y-%#m-%#d')
 
     '''
     # 打卡
