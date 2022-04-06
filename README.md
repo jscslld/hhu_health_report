@@ -26,8 +26,6 @@ python 3.8
 
 2.修复Github Action中读取时间为UTC时间的Bug
 
-2.修改模型存储目录
-
 **[2022/04/04] 3.0.2**
 
 1.添加GitHub Action适配
