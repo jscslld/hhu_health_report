@@ -4,9 +4,9 @@
 name: health report
 
 on:
-  schedule:
-    - cron: "30 0 * * *"
   workflow_dispatch:
+  schedule:
+    - cron: "0 0,1 * * *"
 
 permissions:
   contents: read
