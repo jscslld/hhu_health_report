@@ -1,6 +1,6 @@
 import hashlib
 import logging
-from datetime import datetime
+import datetime
 
 import cv2
 import easyocr
