@@ -1,7 +1,7 @@
 import hashlib
 import logging
 import datetime
-
+import pytz
 import cv2
 import easyocr
 import requests_html
