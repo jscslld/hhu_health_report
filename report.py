@@ -1,14 +1,11 @@
 import hashlib
 import logging
-import datetime
-import pytz
 import cv2
 import easyocr
 import requests_html
 
 from log import config_logging
 import os
-os.environ['TZ'] = 'Asia/Shanghai'
 
 def main():
     username = os.environ.get("username")
@@ -114,7 +111,6 @@ def main():
     '''
     add_form['__EVENTTARGET'] = 'dcbc'  # 修改为databc
     #add_form['__EVENTTARGET'] = 'databc'
-    add_form['tbrq'] = datetime.datetime.now(pytz.timezone('PRC')).strftime('%Y-%#m-%#d')
 
     '''
     # 打卡
