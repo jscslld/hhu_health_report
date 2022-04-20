@@ -12,7 +12,7 @@ def main():
     if username == None:
         raise Exception("未在Github Environments中配置用户名")
     password = os.environ.get("password")
-    if username == None:
+    if password == None:
         raise Exception("未在Github Environments中配置密码")
     '''
     # 配置日志输出和表单模板，初始化请求会话
