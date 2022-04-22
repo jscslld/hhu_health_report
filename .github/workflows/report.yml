@@ -29,5 +29,7 @@ jobs:
       env:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
+        email: ${{ secrets.email }}
+        sender: ${{ secrets.sender }}
       run: |
         python3 report.py
