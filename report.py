@@ -11,11 +11,8 @@ import requests_html
 
 from log import config_logging
 import os
-smtp_host = ""
-smtp_port = 465
-smtp_username = ""
-smtp_password = ""
-def mail(subject,content,my_user):
+def mail(smtp_host,smtp_port,smtp_username,smtp_password,subject,content,my_user):
+    print(smtp_host)
     ret = True
     try:
         msg = MIMEText(content, 'html', 'utf-8')
@@ -42,6 +39,10 @@ def main():
     if email == None:
         needSend = False
     sender = os.environ.get("sender")
+    smtp_host = ""
+    smtp_port = 465
+    smtp_username = ""
+    smtp_password = ""
     if sender == None:
         needSend = False
     else:
@@ -164,17 +165,17 @@ def main():
         logging.info("打卡成功[首次]")
         content = ""
         for key, value in log_template.items():
-            logging.info(value + ":" + jkdk.html.xpath('//*[@id="' + key + '"]')[0].attrs["value"])
+            # logging.info(value + ":" + jkdk.html.xpath('//*[@id="' + key + '"]')[0].attrs["value"])
             content += value + ":" + jkdk.html.xpath('//*[@id="' + key + '"]')[0].attrs["value"]+"<br/>"
         if needSend:
-            mail(Header("今日打卡成功", 'utf-8').encode(), content,email)
+            mail(smtp_host,smtp_port,smtp_username,smtp_password,Header("今日打卡成功", 'utf-8').encode(), content,email)
     elif "已存在" in result:
         logging.info("打卡成功[非首次]")
-        for key, value in log_template.items():
-            logging.info(value + ":" + jkdk.html.xpath('//*[@id="' + key + '"]')[0].attrs["value"])
+        # for key, value in log_template.items():
+        #     logging.info(value + ":" + jkdk.html.xpath('//*[@id="' + key + '"]')[0].attrs["value"])
     else:
         if needSend:
-            mail(Header("今日打卡失败", 'utf-8').encode(), "打卡失败，服务器返回：" + result, email)
+            mail(smtp_host,smtp_port,smtp_username,smtp_password,Header("今日打卡失败", 'utf-8').encode(), "打卡失败，服务器返回：" + result, email)
         logging.fatal("打卡失败，服务器返回：" + result)
 
 
