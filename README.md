@@ -11,6 +11,10 @@
 
 2.在Settings > Secrets中添加名称为USERNAME和PASSWORD的secrets，分别填写奥蓝系统用户名和密码
 
+3.若需打卡成功后发送邮件提醒，请在Secrets中分别添加email和sender，其中email填写您的邮箱，sender填写smtp服务器信息。
+
+sender的格式为： `SMTP_HOST SMTP_PORT SMTP_USERNAME SMTP_PASSWORD` 
+
 3.进入Actions > health_report中，点击Run workflow，测试是否能正常使用
 
 4.接下来的每天上午8点半，系统会自动进行打卡任务。
@@ -20,6 +24,14 @@
 python 3.8
 
 ## 更新日志
+**[2022/04/22] 3.0.4**
+
+1.删除不必要的日期置入，tbrq字段改为由奥蓝系统自动生成，感谢涛总@yin1999的反馈
+
+2.添加基础的发信功能
+
+3.Github Action中不再显示打卡详情，以保护个人隐私
+
 **[2022/04/07] 3.0.3 bugfix**
 
 1.修复3.0.3更新后出现的运行失败的问题，感谢@Yukk1No的反馈
