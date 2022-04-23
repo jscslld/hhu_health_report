@@ -29,21 +29,21 @@ def mail(smtp_host,smtp_port,smtp_username,smtp_password,subject,content,my_user
     return ret
 def main():
     username = os.environ.get("username")
-    if username == None:
+    if not username:
         raise Exception("未在Github Environments中配置用户名")
     password = os.environ.get("password")
-    if password == None:
+    if not password:
         raise Exception("未在Github Environments中配置密码")
     needSend = True
     email = os.environ.get("email")
-    if email == None:
+    if not email:
         needSend = False
     sender = os.environ.get("sender")
     smtp_host = ""
     smtp_port = 465
     smtp_username = ""
     smtp_password = ""
-    if sender == None:
+    if not sender:
         needSend = False
     else:
         sender_info = sender.split(" ")
@@ -109,7 +109,7 @@ def main():
         logging.info("开始处理验证码")
         img = cv2.imread("vcode.aspx", 1)
         im_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        ret, im_inv = cv2.threshold(im_gray, 210, 255, cv2.THRESH_BINARY_INV)
+        _, im_inv = cv2.threshold(im_gray, 210, 255, cv2.THRESH_BINARY_INV)
         im = cv2.resize(im_inv, (0, 0), fx=5, fy=5, interpolation=cv2.INTER_NEAREST)
         cv2.imwrite("vcode.png", im)
 
