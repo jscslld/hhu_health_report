@@ -24,6 +24,10 @@ sender的格式为： `SMTP_HOST SMTP_PORT SMTP_USERNAME SMTP_PASSWORD`
 python 3.8
 
 ## 更新日志
+**[2022/08/11] 3.0.4 bugfix**
+
+1.修复因学校打卡字段变动导致的Action报错问题
+
 **[2022/04/22] 3.0.4**
 
 1.删除不必要的日期置入，tbrq字段改为由奥蓝系统自动生成，感谢涛总@yin1999的反馈
