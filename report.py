@@ -164,9 +164,9 @@ def main():
     if "成功" in result:
         logging.info("打卡成功[首次]")
         content = ""
-        for key, value in log_template.items():
+        # for key, value in log_template.items():
             # logging.info(value + ":" + jkdk.html.xpath('//*[@id="' + key + '"]')[0].attrs["value"])
-            content += value + ":" + jkdk.html.xpath('//*[@id="' + key + '"]')[0].attrs["value"]+"<br/>"
+            # content += value + ":" + jkdk.html.xpath('//*[@id="' + key + '"]')[0].attrs["value"]+"<br/>"
         if needSend:
             mail(smtp_host,smtp_port,smtp_username,smtp_password,Header("今日打卡成功", 'utf-8').encode(), content,email)
     elif "已存在" in result:
