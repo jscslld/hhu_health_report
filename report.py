@@ -1,8 +1,8 @@
 # -*- coding: utf8 -*-
 
 __author__ = "Lu Lidong"
-__copyright__ = "Copyright (C) 2021 Lu Lidong"
-__version__ = "2.0"
+__copyright__ = "Copyright (C) 2021-2022 Lu Lidong"
+__version__ = "2.0.1"
 
 import base64
 import datetime
@@ -251,11 +251,11 @@ class Report(object):
                 self.AddLog("FATAL", "dailyreport.hhu.edu.cn识别失败，当前url：" + str(res.url))
                 return False
             else:
-                if "本科生" in res.html.html:
+                if "本科生健康打卡" in res.html.html:
                     self.AddLog("INFO", "dailyreport.hhu.edu.cn识别成功，身份：本科生")
                     self.Report("http://dailyreport.hhu.edu.cn/pdc/formDesignApi/S/gUTwwojq", self.ColumnUnder)
                     return True
-                elif "研究生" in res.html.html:
+                elif "研究生健康打卡" in res.html.html:
                     self.AddLog("INFO", "dailyreport.hhu.edu.cn识别成功，身份：研究生")
                     self.Report("http://dailyreport.hhu.edu.cn/pdc/formDesignApi/S/xznuPIjG", self.ColumnPost)
                     return True
@@ -289,10 +289,10 @@ class Report(object):
                 self.AddLog("FATAL", "form.hhu.edu.cn识别失败，当前url：" + str(res.url))
                 return False
             else:
-                if "本科生" in res.html.html:
+                if "本科生健康打卡" in res.html.html:
                     self.AddLog("INFO", "form.hhu.edu.cn识别成功，身份：本科生")
                     self.Report("http://form.hhu.edu.cn/pdc/formDesignApi/S/gUTwwojq",self.ColumnUnder)
-                elif "研究生" in res.html.html:
+                elif "研究生健康打卡" in res.html.html:
                     self.AddLog("INFO", "form.hhu.edu.cn识别成功，身份：研究生")
                     self.Report("http://form.hhu.edu.cn/pdc/formDesignApi/S/xznuPIjG", self.ColumnPost)
                     return True
