@@ -127,7 +127,11 @@ def main():
         logging.info("开始登陆")
         if "login" in login.url:
             reason = login.html.xpath('//*[@id="cw"]')[0].attrs["value"]
-            logging.fatal("登陆失败，" + reason.replace("\r", ""))
+            if reason != '4':
+                logging.fatal("登陆失败，" + reason.replace("\r", ""))
+            else:
+                logging.info("登陆成功，提示：请关注企业微信，在微信里免登录直接进入系统,实时接收学校下发的通知、审批提示信息等。")
+                break
             if "验证码" in reason:
                 pass
             else:
