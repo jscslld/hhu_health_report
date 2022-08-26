@@ -22,6 +22,10 @@ sender的格式为： `SMTP_HOST SMTP_PORT SMTP_USERNAME SMTP_PASSWORD`
 python 3.8
 
 ## 更新日志
+**[2022/08/11] 3.0.5**
+
+1.修复了奥蓝系统未绑定企业微信导致的打卡失败的问题
+
 **[2022/08/11] 3.0.4 bugfix**
 
 1.修复因学校打卡字段变动导致的Action报错问题
