@@ -275,7 +275,7 @@ class Report(object):
             "http://mids.hhu.edu.cn/_ids_mobile/login18_9",
             data=data)
         if "loginErrCode" in loginRes.headers.keys():
-            self.AddLog("FATAL", "E河海登录失败，远程服务器返回：" + str(loginRes.headers["loginErrCode"]))
+            self.AddLog("FATAL", "E河海登录失败，远程服务器返回：" + str(loginRes.headers.loginErrCode))
             return False
         else:
             self.AddLog("INFO", "E河海登录成功")
