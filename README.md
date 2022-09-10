@@ -9,9 +9,7 @@
 
 2.在Settings > Secrets中添加名称为USERNAME和PASSWORD的secrets，分别填写奥蓝系统用户名和密码
 
-3.若需打卡成功后发送邮件提醒，请在Secrets中分别添加email和sender，其中email填写您的邮箱，sender填写smtp服务器信息。
-
-sender的格式为： `SMTP_HOST SMTP_PORT SMTP_USERNAME SMTP_PASSWORD` 
+3.若需接收打卡成功/失败提醒，请添加名称为push_plus_token的secrets，该token可在[PushPlus官网](http://www.pushplus.plus/push1.html)获取
 
 3.进入Actions > health_report中，点击Run workflow，测试是否能正常使用
 
@@ -22,6 +20,14 @@ sender的格式为： `SMTP_HOST SMTP_PORT SMTP_USERNAME SMTP_PASSWORD`
 python 3.8
 
 ## 更新日志
+**[2022/09/10] 3.0.6**
+
+1.由于用户反馈SMTP发信配置繁杂，修改为基于PushPlus的微信公众号推送方式。
+
+推送效果
+[![vO9OQx.jpg](https://s1.ax1x.com/2022/09/10/vO9OQx.jpg)](https://imgse.com/i/vO9OQx)
+
+
 **[2022/08/26] 3.0.5**
 
 1.修复了奥蓝系统未绑定企业微信导致的打卡失败的问题

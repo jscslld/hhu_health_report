@@ -1,3 +1,4 @@
-easyocr==1.4.1
+easyocr==1.6.0
 opencv_python_headless==4.5.4.60
 requests_html==0.10.0
+requests==2.28.1
