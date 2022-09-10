@@ -30,6 +30,6 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         email: ${{ secrets.email }}
-        sender: ${{ secrets.sender }}
+        push_plus_token: ${{ secrets.push_plus_token }}
       run: |
         python3 report.py
