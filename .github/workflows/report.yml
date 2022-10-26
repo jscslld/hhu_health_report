@@ -22,6 +22,9 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: "3.8"
+    - name: Set DNS
+      run: |
+        echo 'nameserver 114.114.114.114' >> /etc/resolv.conf
     - name: Install dependencies
       run: |
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
